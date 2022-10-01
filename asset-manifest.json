@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/react-candy-crush/static/css/main.7acaea2f.css",
-    "main.js": "/react-candy-crush/static/js/main.07d3183d.js",
+    "main.css": "/react-candy-crush/static/css/main.59b90204.css",
+    "main.js": "/react-candy-crush/static/js/main.7e411cb1.js",
+    "static/media/blank.png": "/react-candy-crush/static/media/blank.3c513c69f3522c3c6ce8.png",
+    "static/media/purple-candy.png": "/react-candy-crush/static/media/purple-candy.7faba1d06a9692492509.png",
+    "static/media/orange-candy.png": "/react-candy-crush/static/media/orange-candy.f62bbd0ddda109f84344.png",
+    "static/media/blue-candy.png": "/react-candy-crush/static/media/blue-candy.ca8982de30c6357cacb6.png",
+    "static/media/red-candy.png": "/react-candy-crush/static/media/red-candy.fdc13400714d1cb2679d.png",
+    "static/media/green-candy.png": "/react-candy-crush/static/media/green-candy.fabc3d82ebd3fe3638c7.png",
+    "static/media/yellow-candy.png": "/react-candy-crush/static/media/yellow-candy.aefe445b24087f1d91dd.png",
     "index.html": "/react-candy-crush/index.html",
-    "main.7acaea2f.css.map": "/react-candy-crush/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/react-candy-crush/static/js/main.07d3183d.js.map"
+    "main.59b90204.css.map": "/react-candy-crush/static/css/main.59b90204.css.map",
+    "main.7e411cb1.js.map": "/react-candy-crush/static/js/main.7e411cb1.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.59b90204.css",
+    "static/js/main.7e411cb1.js"
   ]
 }
