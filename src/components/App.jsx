@@ -132,13 +132,11 @@ export const App = () => {
   };
 
   const dragEnd = e => {
-    console.log('drag end');
-
-    const squareBeingDraggedId = parseInt(
-      squareBeingDragged.getAttribute('data-id')
-    );
     const squareBeingReplacedId = parseInt(
       squareBeingReplaced.getAttribute('data-id')
+    );
+    const squareBeingDraggedId = parseInt(
+      squareBeingDragged.getAttribute('data-id')
     );
 
     currentColorArrangement[squareBeingReplacedId] =
@@ -147,41 +145,33 @@ export const App = () => {
       squareBeingReplaced.getAttribute('src');
 
     const validMoves = [
-      squareBeingDragged - 1,
-      squareBeingDragged - WIDTH,
-      squareBeingDragged + 1,
-      squareBeingDragged + WIDTH,
+      squareBeingDraggedId - 1,
+      squareBeingDraggedId - WIDTH,
+      squareBeingDraggedId + 1,
+      squareBeingDraggedId + WIDTH,
     ];
 
     const validMove = validMoves.includes(squareBeingReplacedId);
 
     const isAColumnOfFour = checkForColumnOfFour();
-    const isARowOfFour = checkForRowOfFour();
     const isAColumnOfThree = checkForColumnOfThree();
+    const isARowOfFour = checkForRowOfFour();
     const isARowOfThree = checkForRowOfThree();
 
     if (
       squareBeingReplacedId &&
       validMove &&
-      (isARowOfThree || isAColumnOfThree || isARowOfFour || isAColumnOfFour)
+      (isAColumnOfFour || isAColumnOfThree || isARowOfFour || isARowOfThree)
     ) {
-      setSquareBeingDragged(null);
       setSquareBeingReplaced(null);
+      setSquareBeingDragged(null);
     } else {
-      // currentColorArrangement[squareBeingReplacedId] =
-      //   squareBeingDragged.getAttribute('src');
-      // currentColorArrangement[squareBeingDraggedId] =
-      //   squareBeingReplaced.getAttribute('src');
-      // setCurrentColorArrangement([...currentColorArrangement]);
       currentColorArrangement[squareBeingReplacedId] =
         squareBeingReplaced.getAttribute('src');
       currentColorArrangement[squareBeingDraggedId] =
         squareBeingDragged.getAttribute('src');
       setCurrentColorArrangement([...currentColorArrangement]);
     }
-    // setCurrentColorArrangement([...currentColorArrangement]);
-    // console.log('squareBeingDraggedId', squareBeingDraggedId);
-    // console.log('squareBeingReplacedId', squareBeingReplacedId);
   };
 
   const createBoard = () => {
