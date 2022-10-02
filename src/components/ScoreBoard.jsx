@@ -1,7 +1,3 @@
 export const ScoreBoard = ({ score }) => {
-  return (
-    <div className="score-board">
-      <h2>{score}</h2>
-    </div>
-  );
+  return <div className="score-board">Score: {score}</div>;
 };
