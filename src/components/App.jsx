@@ -208,8 +208,6 @@ export const App = () => {
     currentColorArrangement,
   ]);
 
-  // console.log(currentColorArrangement);
-
   return (
     <div className="app">
       <div className="game">
@@ -218,7 +216,6 @@ export const App = () => {
             key={index}
             src={candyColor}
             size={5}
-            // style={{ backgroundColor: candyColor }}
             alt={candyColor}
             data-id={index}
             draggable={true}
