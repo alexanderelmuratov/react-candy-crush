@@ -222,7 +222,6 @@ export const App = () => {
           <img
             key={index}
             src={candyColor}
-            size={5}
             alt={candyColor}
             data-id={index}
             draggable={true}
