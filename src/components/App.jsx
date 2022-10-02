@@ -197,7 +197,7 @@ export const App = () => {
       checkForRowOfThree();
       moveIntoSquareBelow();
       setCurrentColorArrangement([...currentColorArrangement]);
-    }, 100);
+    }, 300);
     return () => clearInterval(timer);
   }, [
     checkForColumnOfFour,
