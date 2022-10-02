@@ -181,8 +181,6 @@ export const App = () => {
     }
   };
 
-  console.log(scoreDisplay);
-
   const createBoard = () => {
     const randomColorArrangement = [];
 
