@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
+import { ScoreBoard } from './ScoreBoard';
+
 import blank from '../images/blank.png';
 import blueCandy from '../images/blue-candy.png';
 import greenCandy from '../images/green-candy.png';
@@ -22,6 +24,7 @@ export const App = () => {
   const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
   const [squareBeingDragged, setSquareBeingDragged] = useState(null);
   const [squareBeingReplaced, setSquareBeingReplaced] = useState(null);
+  const [scoreDisplay, setScoreDisplay] = useState(0);
 
   const checkForColumnOfFour = useCallback(() => {
     for (let i = 0; i <= 39; i++) {
@@ -33,6 +36,7 @@ export const App = () => {
           square => currentColorArrangement[square] === decidedColor
         )
       ) {
+        setScoreDisplay(score => score + 4);
         columnOfFour.forEach(
           square => (currentColorArrangement[square] = blank)
         );
@@ -57,6 +61,7 @@ export const App = () => {
           square => currentColorArrangement[square] === decidedColor
         )
       ) {
+        setScoreDisplay(score => score + 4);
         rowOfFour.forEach(square => (currentColorArrangement[square] = blank));
         return true;
       }
@@ -73,6 +78,7 @@ export const App = () => {
           square => currentColorArrangement[square] === decidedColor
         )
       ) {
+        setScoreDisplay(score => score + 3);
         columnOfThree.forEach(
           square => (currentColorArrangement[square] = blank)
         );
@@ -96,6 +102,7 @@ export const App = () => {
           square => currentColorArrangement[square] === decidedColor
         )
       ) {
+        setScoreDisplay(score => score + 3);
         rowOfThree.forEach(square => (currentColorArrangement[square] = blank));
         return true;
       }
@@ -120,14 +127,10 @@ export const App = () => {
   }, [currentColorArrangement]);
 
   const dragStart = e => {
-    console.log(e.target);
-    console.log('drag start');
     setSquareBeingDragged(e.target);
   };
 
   const dragDrop = e => {
-    console.log(e.target);
-    console.log('drag drop');
     setSquareBeingReplaced(e.target);
   };
 
@@ -173,6 +176,8 @@ export const App = () => {
       setCurrentColorArrangement([...currentColorArrangement]);
     }
   };
+
+  console.log(scoreDisplay);
 
   const createBoard = () => {
     const randomColorArrangement = [];
@@ -228,6 +233,7 @@ export const App = () => {
           />
         ))}
       </div>
+      <ScoreBoard score={scoreDisplay} />
     </div>
   );
 };
